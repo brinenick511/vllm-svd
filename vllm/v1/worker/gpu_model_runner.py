@@ -465,7 +465,8 @@ class GPUModelRunner(LoRAModelRunnerMixin):
                 for block_ids, new_block_ids in zip(  # type: ignore[call-overload]
                         req_state.block_ids,
                         req_data.new_block_ids,
-                        strict=True):
+                        # strict=True,
+                        ):
                     block_ids.extend(new_block_ids)
             else:
                 # The request is resumed from preemption.
